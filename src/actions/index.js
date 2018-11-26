@@ -22,3 +22,12 @@ export function addToDoItem(item){
         payload: resp
     }
 }
+
+export function getSingleItem(id) {
+    const resp = axios.get(`${BASE_URL}/${id + API_KEY}`)
+    // console.log('Action Creator Called - Get Single Item')
+    return {
+        type: types.GET_SINGLE_ITEM,
+        payload: resp
+    }
+}
